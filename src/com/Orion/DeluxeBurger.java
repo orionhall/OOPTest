@@ -14,12 +14,9 @@ public class DeluxeBurger extends Hamburger {
 
     @Override
     public void printOrder () {
-        System.out.println();
-        System.out.println("Orion's Hamburger Shop");
-        System.out.println("Order No. " + Math.floor(Math.random() * 100));
-        System.out.println();
+        printOrderHeader();
         System.out.println("Deluxe burger ordered.");
-        System.out.println("Includes french fries and a drink.");
+        System.out.println("Sides included: " + side1.getName() + ", " + side2.getName() + ".");
         System.out.println("Total price for this order: " + price + ".");
         System.out.println();
     }

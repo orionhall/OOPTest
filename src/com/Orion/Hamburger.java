@@ -3,12 +3,11 @@ package com.Orion;
 public class Hamburger {
     private Bread bread;
     private Meat meat;
-    private Topping topping1;
-    private Topping topping2;
-    private Topping topping3;
-    private Topping topping4;
-    private double basePrice = 2;
-    private double price;
+    protected Topping topping1;
+    protected Topping topping2;
+    protected Topping topping3;
+    protected Topping topping4;
+    protected double price;
 
     // These constructors are redundant but I don't know what arrays are!
 
@@ -53,7 +52,7 @@ public class Hamburger {
     }
 
     double calculatePrice () {
-        double price = this.basePrice;
+        double price = 2;
         if (this.topping1 != null) {
             price += 0.5;
         }
@@ -73,12 +72,16 @@ public class Hamburger {
         return price;
     }
 
-    public void printOrder () {
+    public void printOrderHeader () {
         System.out.println();
         System.out.println("Orion's Hamburger Shop");
-        System.out.println("Order No. " + Math.floor(Math.random() * 100));
-        System.out.println();
+        System.out.println("Order No. " + Math.round(Math.random() * 100));
+    }
+
+    public void printOrder () {
+        printOrderHeader();
         System.out.println("Regular burger on " + this.bread.getBreadType() + " with a(n) " + this.meat.getMeatType() + " ordered.");
+        System.out.printf("Additional toppings: ");
         System.out.printf(getToppingName(topping1) + " ");
         System.out.printf(getToppingName(topping2) + " ");
         System.out.printf(getToppingName(topping3) + " ");
@@ -99,37 +102,6 @@ public class Hamburger {
     public String getToppingName (Topping topping) {
         if (topping != null) {
             return topping.getName() + " ";
-        } else {
-            return "";
-        }
-    }
-
-    // Okay this is stupid but I don't know the right way to do this yet :)
-    // Need access to it in an inherited class but don't want to make it public
-    public String getTopping1Name () {
-        if (topping1 != null) {
-            return topping1.getName() + " ";
-        } else {
-            return "";
-        }
-    }
-    public String getTopping2Name () {
-        if (topping2 != null) {
-            return topping2.getName() + " ";
-        } else {
-            return "";
-        }
-    }
-    public String getTopping3Name () {
-        if (topping3 != null) {
-            return topping3.getName() + " ";
-        } else {
-            return "";
-        }
-    }
-    public String getTopping4Name () {
-        if (topping4 != null) {
-            return topping4.getName() + " ";
         } else {
             return "";
         }

@@ -4,7 +4,6 @@ public class HealthyBurger extends Hamburger {
     private String name;
     private Topping topping5;
     private Topping topping6;
-    private double price;
 
     public HealthyBurger() {
         super(new Bread("Whole wheat"), new Meat("Turkey patty"));
@@ -65,17 +64,15 @@ public class HealthyBurger extends Hamburger {
 
     @Override
     public void printOrder () {
-        System.out.println();
-        System.out.println("Orion's Hamburger Shop");
-        System.out.println("Order No. " + Math.floor(Math.random() * 100));
-        System.out.println();
+        printOrderHeader();
         System.out.println("Healthy burger on " + getBreadType() + " with a(n) " + getMeatType() + " ordered.");
-        System.out.printf(getTopping1Name() + " ");
-        System.out.printf(getTopping2Name() + " ");
-        System.out.printf(getTopping3Name() + " ");
-        System.out.printf(getTopping4Name() + " ");
-        System.out.println(getToppingName(topping5));
-        System.out.println(getToppingName(topping6));
+        System.out.printf("Additional toppings: ");
+        System.out.printf(getToppingName(topping1) + " ");
+        System.out.printf(getToppingName(topping2) + " ");
+        System.out.printf(getToppingName(topping3) + " ");
+        System.out.printf(getToppingName(topping4) + " ");
+        System.out.printf(getToppingName(topping5) + " ");
+        System.out.printf(getToppingName(topping6) + " ");
         System.out.println();
         System.out.println("Total price for this order: " + getPrice() + ".");
         System.out.println();

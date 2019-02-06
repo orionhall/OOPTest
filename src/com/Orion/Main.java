@@ -15,6 +15,9 @@ public class Main {
         System.out.println("---TABULATING ORDERS---");
         hamburger.printOrder();
         hamburger2.printOrder();
-
+        healthyBurger.printOrder();
+        healthyBurger2.printOrder();
+        deluxeBurger.printOrder();
+        System.out.println("---END OF ORDERS---");
     }
 }
